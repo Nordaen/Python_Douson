@@ -68,3 +68,4 @@ class Critter(object):
             else:
                 print("Извини, но такого пункта нет.",choise)
 Critter.main()
+#Исправил ошибку в коде книги: сделал Main статическим методом. 
