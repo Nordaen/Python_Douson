@@ -1,6 +1,6 @@
 class Critter(object):
     def __init__(self,name,mood):
-        print("Появилась на свет хрень")
+        print("Появилась на свет зверюга")
         self.name = name #open attribute
         self.__mood = mood #closed attibute
     def talk(self):
@@ -11,6 +11,6 @@ class Critter(object):
     def public_method(self):
         print("А я открытый, лол))00")
         self.__private_method()
-crit = Critter(name="ВАСИА", mood="неоч")
+crit = Critter(name="Василий", mood="неочень")
 crit.talk()
 crit.public_method()
