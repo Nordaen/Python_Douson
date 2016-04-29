@@ -3,14 +3,20 @@ class Card(object):
     RANKS = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "10", "J", "Q", "K"]
     SUITS = ["c", "d", "h", "s"]
 
-    def __init__(self, rank, suit):
+    def __init__(self, rank, suit, face_up = True):
         self.rank = rank
         self.suit = suit
+        self.is_face_up = face_up
 
     def __str__(self):
-        rep = self.rank + self.suit
+        if self.is_face_up:
+            rep = self.rank +self.suit
+        else:
+            rep ="XX"
         return rep
 
+    def flip(self):
+        self.is_face_up = not self.is_face_up
 
 class Hand(object):
     def __init__(self):
@@ -47,7 +53,7 @@ class Deck(Hand):
         import random
         random.shuffle(self.cards)
 
-    def dead(self, hands, per_hand=1):
+    def deal(self, hands, per_hand=1):
 
         for round in range(per_hand):
             for hand in hands:

@@ -47,7 +47,7 @@ class Deck(Hand):
         import random
         random.shuffle(self.cards)
 
-    def dead(self, hands, per_hand=1):
+    def deal(self, hands, per_hand=1):
 
         for round in range(per_hand):
             for hand in hands:

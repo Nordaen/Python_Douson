@@ -2,7 +2,8 @@
 Блек-джек
 От 1 до 7 игроков против дилера
 """
-import Cards, games
+import Cards
+import games
 
 
 class BJ_Card(Cards.Card):
@@ -67,7 +68,7 @@ class BJ_Hand(Cards.Hand):
 class BJ_Player(BJ_Hand):
     """ Игрок в Блек-Джек """
     def is_hitting(self):
-        response = games.ask_yes_no("\n" + self.name + ",будете брать еще карты? (Y\N)")
+        response = games.Player.ask_yes_no("\n" + self.name +" будете брать еще карты?")
         return response =="y"
 
     def bust(self):
@@ -102,10 +103,10 @@ class BJ_Game(object):
     Игра в блекджек
     """
     def __init__(self, names):
-        self.player = []
+        self.players = []
         for name in names:
             player = BJ_Player(name)
-            self.player.append(player)
+            self.players.append(player)
         self.dealer = BJ_Dealer("Dealer")
         self.deck = BJ_Deck()
         self.deck.populate()
@@ -151,14 +152,14 @@ class BJ_Game(object):
                         player.lose()
                     else:
                         player.push()
-        for player in self.player:
-            player.clear()
-        self.dealer.clear()
+            for player in self.players:
+                player.clear()
+            self.dealer.clear()
     @staticmethod
     def main():
         print("\t\tДобро пожаловать за игровой стол Блек-джека!\n")
         names = []
-        number = games.ask_number("Сколько всего игроков? (1-7): ",low =1, high = 8)
+        number = games.Player.ask_number("Сколько игроков? :", low=1, high=8)
         for i in range(number):
             name =input("Введите имя игрока:")
             names.append(name)
@@ -167,5 +168,5 @@ class BJ_Game(object):
         again = None
         while again !="n":
             game.play()
-            again = games.ask_yes_no("Хотите сыграть еще раз?")
-            BJ_Game.main()
+            again = games.Player.ask_yes_no("Хотите сыграть еще раз?")
+BJ_Game.main()

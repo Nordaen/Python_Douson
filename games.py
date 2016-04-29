@@ -1,3 +1,4 @@
+
 class Player():
     def __init__(self, name, score = 0):
         self.name = name
@@ -10,10 +11,12 @@ class Player():
         while response not in ("y", "n"):
             response = input(question).lower()
         return  response
+
     def ask_number(question, low, high):
         response = None
         while response not in range(low, high):
             response = int(input(question))
         return response
+
     if __name__ =="__main__":
         print("Вы запустили этот модуль напрямую, а не импортировали его. ")
