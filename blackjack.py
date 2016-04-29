@@ -6,7 +6,7 @@ import Cards, games
 
 
 class BJ_Card(Cards.Card):
-    """Карта для игры в Блек - Джек"""
+    """ Карта для игры в Блек - Джек"""
     ACE_VALUE = 1
     @property
     def value(self):
