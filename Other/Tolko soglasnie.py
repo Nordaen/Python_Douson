@@ -1,3 +1,4 @@
+#
 message = input("Введите текст. \n")
 new_message = ""
 VOWELS = "aeiouaeёиоуыэюя"

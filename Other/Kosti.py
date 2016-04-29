@@ -1,3 +1,4 @@
+#
 import random
 die1 = random.randint(1,6)
 die2 = random.randrange(6)+1

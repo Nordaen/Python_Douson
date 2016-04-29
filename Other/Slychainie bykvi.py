@@ -1,3 +1,4 @@
+##
 import random
 word = "индекс"
 print("В переменной word хранится слово:",word,"\n")

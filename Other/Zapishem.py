@@ -1,3 +1,4 @@
+#
 print("Создаю текстовый файл методом вайрлайнес")
 text_file = open("write_it.txt","w",encoding='utf-8')
 lines=["Строка 1\n",

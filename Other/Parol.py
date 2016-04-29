@@ -1,3 +1,4 @@
+#
 print("GDE PAROL YOBA")
 password = input("/nGDE")
 if password =="ale":

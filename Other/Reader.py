@@ -1,3 +1,4 @@
+#
 print ("Открываю")
 text_file = open("read_it.txt","r",encoding='utf-8')
 text_file.close()
