@@ -5,3 +5,4 @@ root = Tk()
 root.title("Простейший GUI")
 root.geometry("200x100")
 # Старт событийного цикла
+root.mainloop()
