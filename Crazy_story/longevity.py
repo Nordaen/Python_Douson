@@ -17,7 +17,7 @@ class Application(Frame):
         self.pw_ent.grid(row =1, column =1, sticky = W)
         self.submit_bttn = Button(self, text = "Узнать секрет", command = self.reveal)
         self.submit_bttn.grid(row = 2, column = 0, sticky = W)
-        self.secret_txt = Text(self, width = 35, height = 5, wrap =WORD)
+        self.secret_txt = Text(self, width = 35, height = 5, wrap = WORD)
         self.secret_txt.grid(row = 3, column = 0, columnspan = 2, sticky = W)
 
     def reveal(self):
@@ -25,8 +25,9 @@ class Application(Frame):
         if contents =="kek":
             message = "Чтобы дожить до 100 лет нужно смотреть каутона и верить в мопсика"
         else:
-            message = "Вы ввели неправильный пароль."
-        self.secret_txt.delete(0, 0, END)
+            message = "wrong password"
+        self.secret_txt.delete("0.0", END)
+        self.secret_txt.insert("0.0", message)
 # Основная часть программы
 root = Tk()
 root.title("Долгожитель")
